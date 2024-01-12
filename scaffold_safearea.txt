@@ -1,0 +1,53 @@
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Flutter Alignment Example'),
+      ),
+      body: SafeArea(
+        child: Container(
+          // Setting the main axis alignment
+          alignment: Alignment.center,
+          child: Column(
+            // Setting the cross axis alignment
+            crossAxisAlignment: CrossAxisAlignment.center,
+            // Setting the main axis alignment
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Hello, Flutter!',
+                style: TextStyle(fontSize: 20),
+              ),
+              SizedBox(height: 20),
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.blue,
+                child: Center(
+                  child: Text(
+                    'Centered Box',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
